@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Administrativa</title>
+    <!-- Inclua as bibliotecas Bootstrap e Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Seu arquivo de estilo personalizado -->
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="mainAdm.js"></script>
+</head>
+<body>
+    <!-- Barra superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="">
+            <div class="my-logo ">
+                <img src="image/bibleqiz.png" alt="logo">
+            </div>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="perfilDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i> Seu Nome
+                </a>
+                <div class="dropdown-menu" aria-labelledby="perfilDropdown">
+                    <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Perfil</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Barra lateral -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-th-large"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-question-circle"></i> Cadastrar Perguntas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-user-edit"></i> Editar Usuários
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-bell"></i> Notificações
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="col-md-3 col-lg-10 d-md-block bg-light perguntas"><div id="app">
+                    <h2 class="title-bar">Cadastrar Perguntas</h2>
+                    <form id="cadastro-form" method="POST">
+                        <div class="form-group">
+                            <label for="pergunta">Pergunta:</label>
+                            <textarea class="form-control" id="pergunta" name="pergunta" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Respostas:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="respostas[]" required>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="correta[]" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mt-2">
+                                <input type="text" class="form-control" name="respostas[]" required>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="correta[]" value="2">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mt-2">
+                                <input type="text" class="form-control" name="respostas[]" required>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="correta[]" value="3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mt-2">
+                                <input type="text" class="form-control" name="respostas[]" required>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" name="correta[]" value="4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="referencia">Referência:</label>
+                            <input type="text" class="form-control" id="referencia" name="referencia" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dificuldade">Dificuldade:</label>
+                            <select class="form-control" id="dificuldade" name="dificuldade" required>
+                                <option value="facil">Fácil</option>
+                                <option value="medio">Médio</option>
+                                <option value="dificil">Difícil</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo da página -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+    </main>
+
+    <!-- Inclua as bibliotecas Bootstrap e jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function () {
+            $("#cadastro-form").submit(function (event) {
+                event.preventDefault();
+
+                // Criar um objeto JSON com os valores do formulário
+                var formData = {
+                    perguntas: $("#pergunta").val(),
+                    respostas: $("input[name='respostas[]']").map(function () {
+                        return $(this).val();
+                    }).get(),
+                    correta: $("input[name='correta[]']:checked").map(function () {
+                        return $(this).val();
+                    }).get(),
+                    referencia: $("#referencia").val(),
+                    dificuldade: $("#dificuldade").val()
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "cadastrarPerguntas.php",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (response) {
+                        // Exiba uma mensagem de sucesso ou faça algo com a resposta
+                        alert(response);
+                        // Limpe o formulário
+                        $("#cadastro-form")[0].reset();
+                    },
+                    error: function () {
+                        alert("Erro ao cadastrar a pergunta.");
+                    }
+                });
+            });
+        });
+</script>
+</body>
+</html>

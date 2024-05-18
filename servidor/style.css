@@ -1,0 +1,202 @@
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.header__top-left {
+    display: inline-block;
+    vertical-align: middle;
+    width: 33%;
+    
+}
+.header__top-left ul{
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+.header__top-left ul li i {
+    border: 1px solid #ecf0f3;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    line-height: 26px;
+    margin-right: 8px;
+    font-size: 0.75rem;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    text-align: center;
+    color: #737373
+}
+.header__top-center {
+    width: 33%;
+    text-align: center;
+    display: inline-block;
+}
+.header__top-right {
+    display: inline-block;
+    width: 33%;
+}
+.header__top-right ul {
+    right: 0;
+    float: right;
+    justify-content: center;
+    margin-bottom: 0;
+}
+.header__top-right ul li i {
+    
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    color: #737373;
+}
+.header__top-right li {
+    display: inline;
+    vertical-align: middle;
+    border-right: 1px solid #ecf0f3;
+}
+
+/* jssor slider loading skin spin css */
+.jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes jssorl-009-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*jssor slider bullet skin 132 css*/
+.jssorb132 {position:absolute;}
+.jssorb132 .i {position:absolute;cursor:pointer;}
+.jssorb132 .i .b {fill:#fff;fill-opacity:0.8;stroke:#000;stroke-width:1600;stroke-miterlimit:10;stroke-opacity:0.7;}
+.jssorb132 .i:hover .b {fill:#000;fill-opacity:.7;stroke:#fff;stroke-width:2000;stroke-opacity:0.8;}
+.jssorb132 .iav .b {fill:#000;stroke:#fff;stroke-width:2400;fill-opacity:0.8;stroke-opacity:1;}
+.jssorb132 .i.idn {opacity:0.3;}
+
+.jssora051 {display:block;position:absolute;cursor:pointer;}
+.jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+.jssora051:hover {opacity:.8;}
+.jssora051.jssora051dn {opacity:.5;}
+.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+#jssor_1 {
+    margin-bottom: 10px !important;
+}
+.navbar {
+    margin-top: 5px !important;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    box-shadow: 0 4px 5px black;
+    z-index: 9;
+    text-shadow: 0 1px 3px black;
+}
+.nav-link {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+.navbar .bg-dark {
+    background-color: #737373 !important;
+}
+ul .nav-item {
+    border-right: 1px solid white;
+}
+@media only screen and (max-width : 968px) {
+
+    .header__top-left {
+       display: none;
+    }
+    .header__top-center  {
+        width: 100%;
+    }
+    .header__top-right {
+        width: 100%;
+    }
+    .header__top-right ul {
+        justify-content: center;
+    }
+}
+.position-sticky {
+    overflow: hidden;
+    background: #343a40 !important;
+    height: 91vh;
+    text-transform: uppercase; 
+    color: #ecf0f3;
+}
+.position-sticky a {
+    color: #ecf0f3;
+}
+.position-sticky ul {
+    padding-top: 10px;
+}
+.position-sticky li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+.sidebar {
+    padding-left: 0;
+}
+.position-sticky li:hover > a {
+    background-color: white;
+    color: black;
+}
+.position-sticky li:hover{
+    background-color: white;
+    color: black;
+}
+.my-logo img {
+    width: 50%;
+}
+.title-bar {
+    text-transform: uppercase; 
+    border-left: 2px solid #fff;
+    box-shadow: 0px 2px 4px -4px black;
+}
+.perguntas {
+    margin-top: 5px
+}
+.my-header {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+.banner-central {
+    width: 100%;
+    height: 50vh;
+    background: url(img/banner-central.jpg) no-repeat top;
+    background-size: cover;
+}

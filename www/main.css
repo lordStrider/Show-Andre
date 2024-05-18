@@ -1,0 +1,730 @@
+@font-face {
+    font-family: "samuel";
+    src: url(samuel.ttf);
+}
+
+:root {
+    color: #000;
+}
+
+#config {
+    position: absolute;
+    color: white;
+    font-size: 1.2em;
+    right: 10px;
+    top: 10px;
+    text-shadow: 0px 0px 2px black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: url(img/jesus-desert.jpg) no-repeat ; */
+    background-size: cover;
+}
+.back-button {
+    position: absolute;
+    background: url("./img/back-arrow.png") no-repeat;
+    background-size: 100% 100%;
+    width: 15%;
+    height: 50%;
+    right: 10px;
+    top: 10px;
+}
+
+.logoMarca {
+    /* background: silver; */
+    text-align: center;
+    text-shadow: 0px 1px 3px black;
+    color: gold;
+    height: 45px;
+    padding-top: 10px;
+    font-family: "samuel";
+    font-size: 30px;
+}
+
+.pergunta {
+    width: 89%;
+    display: inline-block;
+    padding-left: 3px;
+}
+
+.quest {
+    width: 10%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    font-size: 2em;
+    font-weight: bold;
+    overflow: hidden;
+    font-family: arial;
+    background: url(img/jesus-desert.jpg) no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    #app {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        font-size: 2em;
+        font-weight: bold;
+        overflow: hidden;
+        font-family: arial;
+        background: url(img/jesus-desert.jpg) top no-repeat;
+        background-size: cover;
+        font-size: 1.2em;
+    }
+}
+
+.perguntas {
+    display: block;
+    padding: 10px;
+    width: 95%;
+    /* box-shadow: 0px 2px 5px black; */
+    background: rgba(47, 46, 46, 0.8);
+    color: white;
+    text-align: justify;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.respostas {
+    margin-top: 20px;
+    width: 100%;
+    height: 900px;
+    background: rgb(10, 10, 10, 0.5);
+    padding-top: 20px;
+}
+
+.resposta {
+    margin: 0 auto;
+    box-shadow: 1px 1px 2px black;
+    margin-top: 20px;
+    width: 90%;
+    background: #553824;
+    color: white;
+    padding: 10px;
+    border-radius: 0px 30px 0px;
+    min-height: 30px;
+}
+
+.indice {
+    border: 1px solid black;
+    margin-right: 10px;
+    text-align: center;
+    padding: 5px 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #353332;
+    border-radius: 0px 10px 0;
+
+}
+
+.corretaCor {
+    background-color: green;
+}
+
+#modal {
+    position: fixed;
+    width: 50%;
+    height: 99vh;
+    border: 1px solid rgba(10, 10, 10, 0.5);
+    overflow: hidden;
+    background-color: rgba(10, 10, 10, .7);
+    text-align: center;
+    display: none;
+}
+
+.content {
+    background: white;
+    width: 400px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 40vh;
+}
+
+.content button {
+    min-width: 100px;
+    background: silver;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.modalBackground {
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.modalCorpo {
+    margin: 0 auto;
+    margin-top: 40vh;
+    width: 80%;
+    min-height: 145px;
+    background: url(img/fundo-resp.jpg) no-repeat bottom;
+    background-size: cover;
+    box-shadow: 1px 1px 20px white;
+    z-index: 999;
+    font-family: "Samuel";
+}
+
+.modalCorpo h5 {
+    text-align: center;
+    text-shadow: 0px 1px 5px black;
+    color: gold;
+    height: 45px;
+    padding-top: 10px;
+    font-family: "samuel";
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.areaButton {
+    width: 100%;
+    height: 50px;
+    padding-left: 5px;
+}
+
+.areaButton button {
+    font-size: 1em;
+    width: 48%;
+    height: 40px;
+    font-family: "samuel";
+    color: white;
+    text-shadow: 0px 1px 3px black;
+    background: rgb(57, 57, 150) no-repeat center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.areaLogin {
+    width: 90%;
+    min-width: 150px;
+    margin: 0 auto;
+    background: rgba(90, 90, 90, 0.7);
+    margin-top: 30vh;
+    overflow: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+input::placeholder {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-size: bolder;
+}
+
+.areaLogin button {
+    font-size: 1.2em;
+    width: 90%;
+    height: 30px;
+    font-family: "arial";
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 1px 3px black;
+    background: rgb(57, 57, 150) no-repeat center;
+    /* margin-left: 5%; */
+    /* text-transform: uppercase; */
+    margin-bottom: 5px;
+}
+
+.areaLogin input {
+    height: 20px;
+    width: 90%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    /* margin-left: 5%; */
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    text-align: center;
+    
+}
+
+input:focus {
+    border: none !important;
+    border-bottom: white;
+}
+
+input:focus-visible {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.user {
+    float: left;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 3px black;
+    color: gold;
+    font-family: "samuel";
+    font-size: 1em;
+
+}
+
+.fa-brands {
+    border-right: 1px solid rgb(255, 255, 255);
+    padding: 5px;
+    float: left;
+}
+
+.fa-clipboard {
+    border-right: 1px solid rgb(255, 255, 255);
+    padding: 5px;
+    padding-right: 10px;
+    float: left;
+}
+
+.googlebutton {
+    width: 88%;
+    height: 29px;
+    background: rgb(57, 57, 150) no-repeat;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 5px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.googlebutton span {
+    vertical-align: middle;
+    padding-top: 4px;
+    padding-left: 10px;
+    float: left;
+}
+
+.imgPerfil {
+    float: left;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 3px black;
+    margin: 5px;
+    outline: 3px solid #1e4f76;
+    border: 2px solid black;
+}
+
+.imgPerfil img {
+    width: 100%;
+    height: 100%;
+}
+
+.headerPerfil {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: auto;
+    box-shadow: 0px -2px 5px black;
+    background: #0000003d;
+}
+.headerPerfil-game {
+    position: relative;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    box-shadow: 0px -2px 5px black;
+    background: #0000003d;
+    justify-content: space-around;
+}
+.timer {
+    position: relative;
+    display: flex;
+    top: 10px;
+    text-transform: uppercase;
+    color: white;
+    margin-left: 29%;
+}
+.chronometro {
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 0 0 5px white;
+    border-radius: 50%;
+}
+.perg-head {
+    position: relative;
+    width: 40%;
+    overflow: hidden;
+    justify-content: space-around;
+}
+.perg-head-timer {
+position: relative;
+width: 19%;
+margin: 0 auto;
+}
+.menu-btn {
+    position: relative;
+    display: flex;
+    padding: 5px 0px;
+    justify-content: end;
+}
+.menu-btn img {
+    width: 40%;
+}
+
+.imageTop {
+    width: 100%;
+}
+
+.imageBottom {
+    position: relative;
+    width: 100%;
+    top: 65vh;
+    transform: scaleY(-1);
+}
+
+.custonBar {
+    position: relative;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+
+}
+
+.custonBar i {
+    position: relative;
+    width: 23px;
+    height: 23px;
+    top: -4px;
+}
+
+.custonBar input[type="range"] {
+    width: 85%;
+    margin: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    cursor: pointer;
+    outline: none;
+}
+
+.custonBar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.mybars {
+    text-align: center;
+}
+
+.titleMenu {
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.062);
+
+}
+
+.titleMenu h2 {
+    line-height: 5px;
+}
+
+.saida {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    background: white;
+    padding: 5px 0px 5px 0;
+    box-shadow: 0 0 5px black;
+}
+
+/* botões inferiores do mercado */
+.marketButons {
+    position: relative;
+    height: 80px;
+    width: 31%;
+    background: rgba(0, 0, 0, 0.5);
+    vertical-align: bottom;
+    color: gold;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px black;
+    font-size: .9em;
+    text-align: center;
+}
+
+.botton-area {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    vertical-align: bottom;
+    justify-content: space-around;
+    margin-top: 78vh;
+}
+
+#loja-1 {
+    background: url(./img/tenda-pequena-removebg-preview.png) no-repeat;
+    background-size: cover;
+}
+
+#loja-2 {
+    background: url(./img/templo-removebg.png) no-repeat;
+    background-size: cover;
+}
+
+#loja-3 {
+    background: url(./img/jornada.png) no-repeat;
+    background-size: cover;
+}
+
+.marketButons .subtitulo {
+    position: relative;
+    top: 84%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 16%, rgba(0, 212, 255, 0) 100%);
+    display: block;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    border-top: 0px;
+    box-shadow: 0 0 2px black;
+    font-size: 0.8em;
+
+}
+
+.aviso {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 5px;
+    height: 5px;
+    padding: 5px;
+    border-radius: 50%;
+    background: url("./img/esfera.png") no-repeat center;
+    background-size: cover;
+    outline: 1px double white;
+    box-shadow: 0px px 5px silver;
+    z-index: 99;
+
+}
+.check-point {
+    position: relative;
+    background: rgb(93, 0, 255);
+    width: 2px;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+.my-point {
+    position: relative;
+    background: yellow;
+    width: 4px;
+    padding: 8px;
+    border-radius: 70%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+#my-canvas {
+    width: 100%;
+    height: 100%;
+}
+.areaBase {
+    background: rgba(27, 27, 27, 0.34);
+    height: 50px;
+    box-shadow: 0 0 2px black;
+    color: white;
+}
+.areaTitulo{
+    position: relative;
+    text-transform: capitalize;
+    z-index: 999;
+}
+.areaTitulo span{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+.colums {
+    display: inline-block;
+    height: 64px;
+}
+.path-posi {
+    position: relative;
+    z-index: 999;
+}
+.img-rabino {
+    position: relative;
+    background: url("img/sacerdote.png") no-repeat center;
+    background-size: cover;
+    width: 22vh;
+    height: 32vh;
+    margin: 0 auto;
+    top: 45vh;
+    z-index: 999;
+}
+.hudArea {
+    position: relative;
+    width: 20% !important;
+    height: 25px;
+    padding: 5px 0px;
+    float: right;
+    color: gold;
+    font-family: "samuel";
+    font-size: 1.1em;
+    padding-right: 5px;
+    text-shadow: 0px 0px 1px black;
+}
+.hudArea img {
+    height: 80%;
+    margin-right: 10px;
+}
+.hudArea .status {
+    width: 100%;
+    height: 30px;
+}
+.coinValue {
+    float: right;
+}
+.hudArea2 {
+        position: relative;
+    width: 65% !important;
+    height: 25px;
+    padding: 5px 0px;
+    float: right;
+    color: gold;
+    font-family: "samuel";
+    font-size: 1.1em !important;
+    padding-right: 5px;
+    display: flex;
+    text-shadow: 0px 0px 1px black;
+    justify-content: flex-end;
+}
+.hudArea2 img {
+    height: 20px!important;
+    width: 20px !important;
+    margin-right: 10px;
+}
+
+
+/* area de cadastro */
+.bgloading {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: hsla(0, 0%, 0%, 0.7);
+}
+.cadBlock {
+    position: absolute;
+    width: 90%;
+    min-width: 150px;
+    margin-left: 5%;
+    background: rgba(90, 90, 90, 0.7);
+    margin-top: -100vh;
+    overflow: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+.cadBlock  .input-field{
+    height: 20px;
+    width: 90%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    /* margin-left: 5%; */
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    text-align: center;
+}
+.cadBlock #cadastrar {
+    font-size: 1.4em;
+    width: 48%;
+    height: 40px;
+    font-family: "samuel";
+    color: white;
+    text-shadow: 0px 1px 3px black;
+    background: rgb(57, 57, 150) no-repeat center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+.tituloCad {
+    font-size: 1.4em;
+    width: 90%;
+    font-family: "samuel";
+    color: white;
+    text-shadow: 0px 1px 3px black;
+    background: rgb(57, 57, 150) no-repeat center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    
+    padding: 5px 0px;
+}
+#inputFile {
+    display: none;
+}
+.img-profile {
+    width: 100px;
+    height: 100px;
+    background: url(img/perso-profileicon.jpg) no-repeat center;
+    background-color: white;
+    background-size: contain;
+    margin-left: 5%;
+    box-shadow: 0 0 2px gray;
+}    
+/* input[type="file"] {
+    position: relative;
+    width: 90%;
+  }
+  
+  input[type="file"]::file-selector-button {
+    width: 136px;
+    color: transparent;
+  }
+  
+  /* Faked label styles and icon */
+  input[type="file"]::before {
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    left: 16px;
+    height: 20px;
+    width: 20px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+  }
+  
+  input[type="file"]::after {
+    position: absolute;
+    pointer-events: none;
+    top: 11px;
+    left: 40px;
+    color: #0964b0;
+    content: "Upload File";
+  }
+  
+  /* ------- From Step 1 ------- */
+
+  
